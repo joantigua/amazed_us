@@ -1,3 +1,8 @@
+import Image from 'next/image'
+import logo from '../public/logo.svg' 
+import shopping_cart from '../public/shopping_cart.svg'
+import logo_footer from '../public/logo_footer.svg'  
+import logo_copyright from '../public/logo_copyright.svg'  
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -11,7 +16,30 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      
+      <body className={inter.className}>
+      <div id="navbar">
+        <div id="logo">
+        <Image src={logo} alt="Picture of the author"/>
+        </div>
+        <div id="navbarOptions">
+          <p>Contact Us</p>
+          <p>Sign In</p>
+          <p>About Us</p>
+          <p>BUY!</p>
+          <Image src={shopping_cart} alt="Picture of the author"/>
+        </div>
+      </div>
+        {children}
+      <div id="footer">
+        <div id="footerLogo">
+        <Image src={logo_footer} alt="Picture of the author" height={80} width={80}/>
+        </div>
+        <div id="footerCopyright">
+        <Image src={logo_copyright} alt="Picture of the author" height={100} width={100}/>
+        </div>
+      </div>
+      </body>
     </html>
   )
 }
